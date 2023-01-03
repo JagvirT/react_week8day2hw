@@ -1,6 +1,10 @@
 import { Component } from 'react';
 import SearchBox from './components/SearchBox/SearchBox';
+import JagInfo from './components/JagInfo/JagInfo';
+import Info from './routes/Home/Info';
+import Superhero from './components/Superhero/Superhero';
 import './App.css';
+import { Routes, Route } from 'react-router-dom'
 
 class App extends Component {
   constructor(){
@@ -44,7 +48,12 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <SearchBox jokes={this.state.jokes}/>
+        {/* <SearchBox jokes={this.state.jokes}/> */}
+        <Routes>
+          <Route path='/' element= {<SearchBox/>} />
+          <Route path='/info' element={<JagInfo/>}/>
+          <Route path='/background' element={<Superhero/>}/>
+        </Routes>
       </div>
     );
   }
